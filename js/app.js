@@ -16,6 +16,11 @@ const section = document.querySelector("section");
 const end = section.querySelector("h1");
 
 //title_Glow_IN
+window.addEventListener("load", () => {
+  const preload = document.querySelector(".preload");
+  preload.classList.add("preload-finish");
+  $("html, body").removeAttr("style");
+});
 for (let i = 0; i < splitText.length; i++) {
   text.innerHTML += "<span>" + splitText[i] + "</span>";
 }
