@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//!properties
+//*colors
+$opacity_black: rgba(0, 0, 0, 0.801);
+$part_text_color: white;
+$test_color: red;
+//*universal settings
+%textControl {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+@mixin txtPos($top, $left) {
+  top: $top;
+  left: $left;
+}
+@mixin titleFormat($size) {
+  font-size: $size;
+  color: rgb(255, 255, 255);
+  font-family: "Play", sans-serif, bold;
+}
+@mixin txtFormat($size) {
+  font-size: $size;
+  color: $part_text_color;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  padding: 15px 20px 15px 20px;
+  letter-spacing: 2px;
+  filter: drop-shadow(0 0 0.75rem black);
+  //line-height: 40px;
+}
+//!End
+a {
+  @extend %textControl;
+  @include txtPos(10%, 10%);
+  @include titleFormat(25px);
+  filter: drop-shadow(0 0 0.3rem black);
+  list-style: none;
+  z-index: 1;
+}
+a:hover {
+  color: rgb(217, 255, 233);
+  filter: drop-shadow(0 0 0.1rem rgb(69, 255, 199));
+}
+.intro {
+  height: 100vh;
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .title {
+    @extend %textControl;
+    @include txtPos(51%, 80%);
+    @include titleFormat(70px);
+  }
+  span {
+    opacity: 0;
+    transition: all 2.5s ease;
+    color: white;
+  }
+  span.fade {
+    opacity: 1;
+    color: rgb(217, 255, 233);
+    filter: drop-shadow(0 0 0.5rem rgb(69, 255, 199));
+  }
+
+  .heart {
+    @extend %textControl;
+    @include txtPos(50%, 25%);
+    @include txtFormat(25px);
+    background-color: $opacity_black;
+  }
+  .hand {
+    @extend %textControl;
+    @include txtPos(50%, 70%);
+    @include txtFormat(25px);
+    background-color: $opacity_black;
+  }
+  .waist {
+    @extend %textControl;
+    @include txtPos(50%, 68%);
+    @include txtFormat(25px);
+    background-color: $opacity_black;
+  }
+  .feet {
+    @extend %textControl;
+    @include txtPos(50%, 36%);
+    @include txtFormat(25px);
+    background-color: $opacity_black;
+  }
+  .loot {
+    @extend %textControl;
+    @include txtPos(20%, 20%);
+    @include txtFormat(50px);
+  }
+}
+
+section {
+  height: 100vh;
+  color: black;
+  h1 {
+    padding-top: 300px;
+    text-align: center;
+    font-size: 80px;
+  }
+  a {
+    @include txtPos(20%, 20%);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    padding: 15px 20px 15px 20px;
+    letter-spacing: 2px;
+    filter: drop-shadow(0 0 0.75rem black);
+    color: black;
+    z-index: 1;
+  }
+}
