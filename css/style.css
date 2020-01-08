@@ -224,6 +224,9 @@
 }
 
 @media (max-width: 768px) {
+  .nav {
+    height: 8vh;
+  }
   .intro .title, .intro .heart, .intro .heartImage, .intro .hand, .intro .waist, .intro .feet, .intro .loot, .intro .btnf, .intro .btni, .intro .btnt, .intro .btny {
     font-size: 40px;
   }

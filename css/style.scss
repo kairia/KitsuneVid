@@ -198,6 +198,9 @@ $test_color: rgba(21, 109, 87, 0.486);
 
 
 @media(max-width:768px){
+  .nav {
+    height: 8vh;
+  }
   %txtsize{
     font-size: 40px;
   }

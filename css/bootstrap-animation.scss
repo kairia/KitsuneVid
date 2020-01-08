@@ -56,10 +56,12 @@ ul li{
     background-color: rgb(28, 133, 127);
     z-index: 998;
     height: 4vh;
+    padding-top: 0.5vh;
     padding-left:1vw ;
     margin-top: 3vh;
     align-items: center;
     a{
+        font-family: "Oswald", sans-serif;
         color: white;
         &:hover {
             color: rgb(28, 133, 127);
@@ -113,6 +115,15 @@ ul li{
 }
 
 @media (max-width: 768px){
+    ul li{
+    margin-top: 10vh;  
+    padding-top: 5vh; 
+    padding-bottom: 10vh;
+    padding-left: 5vw;
+    a{
+        font-size: 3vh;
+    }
+    }
     .navbar-toggler[type="button"] {
        
         right: 5%;top:1vh;
@@ -120,7 +131,7 @@ ul li{
     }
    
     .navbar-control{
-        width: 50vw;
+        width: 60vw;
         height: 100%;
     }
 }
