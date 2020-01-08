@@ -115,8 +115,7 @@ ul li{
 @media (max-width: 768px){
     .navbar-toggler[type="button"] {
        
-        right: 5%;
-        top: 930px;
+        right: 5%;top:1vh;
         position: fixed;
     }
    
@@ -133,8 +132,7 @@ ul li{
         position: fixed;
     }
     .navbar-control{
-        width: 13vw;
-        height: 100%;
+        width: 13vw;top:1vh;
         background-color: #ffffff;
     }
 }
