@@ -1,0 +1,122 @@
+// *{background-color: black;}
+//navbar button setting
+.navbar-toggler[type="button"] {
+    border-color: #233140;
+    border-radius: 50%;
+    border: #ffffff 4px solid;
+    background:  rgba($color: #233140, $alpha: 0.8);
+    right: 5vw;
+    bottom: 10vh;
+    position: fixed;
+    z-index: 999;
+    transition: 1s ease;
+}
+//----------------------------------------------------------------
+.navbar-toggler:focus{
+    outline: none;
+}
+//navbar line style
+.navbar_icon-bar{
+    width: 20px;
+    height: 2px;
+    background-color: #ffffff;
+    display: block;
+    transition: all 0.2s ease-in-out;
+    margin: 6px 0;
+}
+//----------------------------------------------------------------
+
+//navbar animation
+.navbar-toggler[aria-expanded = "false"]:hover .navbar_icon-bar:nth-child(1){
+    transform: translateY(-0.2rem);
+}
+
+.navbar-toggler[aria-expanded = "false"]:hover .navbar_icon-bar:nth-child(3){
+    transform: translateY(0.2rem);
+}
+
+.navbar-toggler[aria-expanded = "false"] .navbar_icon-bar{
+    transform: rotate(0);
+}
+.navbar-toggler[aria-expanded = "true"] .navbar_icon-bar:nth-child(1){
+    transform: scaleY(2) rotate(90deg);
+    transform-origin: 29% 10%;
+}
+.navbar-toggler[aria-expanded = "true"] .navbar_icon-bar:nth-child(2){
+    transform: translate(5px , -5px) rotate(-45deg) scaleX(1.2);
+    transform-origin: 29% 90%;
+}
+.navbar-toggler[aria-expanded = "true"] .navbar_icon-bar:nth-child(3){
+    transform: translate(5px , -5px) rotate(45deg) scaleX(1.2);
+    transform-origin: 29% 90%;
+}
+//----------------------------------------------------------------
+ul li{
+    background-color: #ffe175;
+    z-index: 998;
+    border-bottom: 3px solid #1c875f;
+}
+.navbar-control{
+    width: 200px;
+    height: 100%;
+    background-color: #ffe175;
+    z-index: 998;
+}
+.collapsing{
+    width: 0;
+    transition-property: width;
+    height: 100%;
+    white-space: nowrap;    
+    right: 0;
+    z-index: -1;
+    z-index: 998;
+}
+.show{
+    right: 0;
+    z-index: 998;
+    height: 100%;
+    position: fixed;
+}
+
+.backBlur{
+    position: fixed;   
+    min-height: 1080px;
+    opacity: 0.5;
+    background: white;
+}
+.square{
+    -webkit-transition: opacity background;
+    transition: opacity background;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;    
+    z-index: 997;
+}
+
+@media (max-width: 768px){
+    .navbar-toggler[type="button"] {
+       
+        right: 5%;
+        top: 930px;
+        position: fixed;
+    }
+   
+}
+@media (max-width: 320px){
+    .navbar-toggler[type="button"] {
+       
+        right: 5%;
+        top: 500px;
+        position: fixed;
+    }
+    .navbar-control{
+        width: 160px;
+        height: 100%;
+        background-color: #ffffff;
+    }
+}

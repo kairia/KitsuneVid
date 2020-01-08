@@ -11,16 +11,10 @@ const waistText = intro.querySelector(".waist");
 const feetLeftText = intro.querySelector(".feet");
 const lootText = intro.querySelector(".loot");
 
-//END SECTION
-const section = document.querySelector("section");
-const end = section.querySelector("h1");
 
+
+const bgimg = document.querySelector(".bgimg");
 //title_Glow_IN
-window.addEventListener("load", () => {
-  const preload = document.querySelector(".preload");
-  preload.classList.add("preload-finish");
-  $("html, body").removeAttr("style");
-});
 for (let i = 0; i < splitText.length; i++) {
   text.innerHTML += "<span>" + splitText[i] + "</span>";
 }
@@ -102,14 +96,17 @@ const heartTextAnim = TweenMax.fromTo(
   { opacity: 1 }
 );
 
+
 let scene3 = new ScrollMagic.Scene({
   duration: hid,
   triggerElement: intro,
   triggerHook: 0,
   offset: hio
 })
+   .on('start',() => { bgimg.classList.toggle("bgimg2");  })
   .setTween(heartTextAnim)
   .addTo(controller);
+  
 
 const heartTextAnimOut = TweenMax.fromTo(
   heartText,
@@ -127,6 +124,7 @@ let scene4 = new ScrollMagic.Scene({
   .setTween(heartTextAnimOut)
   .addTo(controller);
 
+
 //*armText Animation
 const armTextAnim = TweenMax.fromTo(armText, 3, { opacity: 0 }, { opacity: 1 });
 
@@ -136,6 +134,7 @@ let scene5 = new ScrollMagic.Scene({
   triggerHook: 0,
   offset: aio
 })
+.on('start',() => { bgimg.classList.toggle("bgimg3");  })
   .setTween(armTextAnim)
   .addTo(controller);
 
@@ -169,6 +168,7 @@ let scene7 = new ScrollMagic.Scene({
   triggerHook: 0,
   offset: wio
 })
+.on('start',() => { bgimg.classList.toggle("bgimg4");  })
   .setTween(waistTextAnim)
   .addTo(controller);
 
@@ -202,6 +202,7 @@ let scene9 = new ScrollMagic.Scene({
   triggerHook: 0,
   offset: flio
 })
+.on('start',() => { bgimg.classList.toggle("bgimg5");  })
   .setTween(feetLeftTextAnim)
   .addTo(controller);
 
@@ -235,6 +236,7 @@ let scene13 = new ScrollMagic.Scene({
   triggerHook: 0,
   offset: lio
 })
+.on('start',() => { bgimg.classList.toggle("bgimg6");  })
   .setTween(lootTextAnim)
   .addTo(controller);
 //!Video Animation
@@ -251,4 +253,4 @@ setInterval(() => {
   console.log(scrollpos, delay);
 
   video.currentTime = delay;
-}, 60);
+}, 33.3);

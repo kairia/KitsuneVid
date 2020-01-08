@@ -1,17 +1,15 @@
-@import "./flexCenter";
-@import "./SelectDisable";
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 //!properties
 //*colors
 $opacity_black: rgba(0, 0, 0, 0.801);
-$part_text_color: white;
-$test_color: red;
+$part_text_color: rgb(255, 255, 255);
+$test_color: rgba(21, 109, 87, 0.486);
 //*universal settings
 %textControl {
   position: absolute;
@@ -31,103 +29,46 @@ $test_color: red;
   color: $part_text_color;
   text-align: center;
   font-family: "Oswald", sans-serif;
-  padding: 15px 20px 15px 20px;
+  padding: 20px 20px 20px 20px;
   letter-spacing: 2px;
-  filter: drop-shadow(0 0 0.75rem black);
+  //-webkit-text-stroke: 1px black;
+  text-shadow: rgb(0, 255, 128);
+  //filter: drop-shadow(0 0 0.75rem rgba(0, 255, 128, 0.267));
   //line-height: 40px;
 }
+@mixin txtFormata($size) {
+  font-size: $size;
+  color: $part_text_color;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
 //!End
-.preload {
-  @include flexCenter();
-  @include SelectDisable();
-  z-index: 100;
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background-color: #252525;
-  transition: opacity ease 1.25s;
-  p {
-    z-index: 2;
-    color: white;
-    font-size: 30px;
-  }
-  #logo {
-    position: absolute;
-    width: 450px;
-    animation: spin 10s linear infinite;
-  }
-  #logo:nth-child(1) {
-    filter: blur(5px);
-    animation: spin 10s linear infinite, breath 12s ease infinite alternate;
-  }
-  #logo:nth-child(2) {
-    filter: blur(10px);
-    animation: spin 10s linear infinite, breath 6s ease infinite alternate;
-  }
-  #logo:nth-child(3) {
-    filter: blur(15px);
-    animation: spin 10s linear infinite, breath 2s ease infinite alternate;
-  }
-  #text {
-    position: absolute;
-    width: 400px;
-    transform: translateY(50%);
-  }
-  #textblur {
-    position: absolute;
-    width: 400px;
-    transform: translateY(50%);
-    filter: blur(7px);
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes breath {
-    from {
-      opacity: 0.3;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-}
-.preload-finish {
-  opacity: 0;
-  pointer-events: none;
-}
-a {
+/*.heart a {
   @extend %textControl;
-  @include txtPos(10%, 10%);
+  @include txtPos(87%, 76%);
   @include titleFormat(25px);
   filter: drop-shadow(0 0 0.3rem black);
-  list-style: none;
-  z-index: 1;
 }
-a:hover {
+.heart a:hover {
   color: rgb(217, 255, 233);
   filter: drop-shadow(0 0 0.1rem rgb(69, 255, 199));
-}
+}*/
 .intro {
   height: 100vh;
   video {
     height: 100%;
     width: 100%;
     object-fit: cover;
+
   }
   .title {
     @extend %textControl;
-    @include txtPos(51%, 80%);
-    @include titleFormat(70px);
+    @include txtPos(51%, 81%);
+    @include titleFormat(75px);
   }
   span {
     opacity: 0;
-    transition: all 2.5s ease;
+    transition: all 4s ease;
     color: white;
   }
   span.fade {
@@ -142,9 +83,10 @@ a:hover {
     @include txtFormat(25px);
     background-color: $opacity_black;
   }
+
   .hand {
     @extend %textControl;
-    @include txtPos(50%, 70%);
+    @include txtPos(50%, 60%);
     @include txtFormat(25px);
     background-color: $opacity_black;
   }
@@ -162,30 +104,375 @@ a:hover {
   }
   .loot {
     @extend %textControl;
-    @include txtPos(20%, 20%);
+    @include txtPos(20%, 22%);
     @include txtFormat(50px);
+  }
+  .btnf {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(86, 139, 255);
+    padding: 12px 10px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  .btni {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(219, 219, 219);
+    padding: 12px 10px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  .btnt {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(35, 229, 255);
+    padding: 12px 10px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  .btny {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(255, 38, 38);
+    padding: 12px 10px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  button:hover {
+    color: rgb(217, 255, 233);
+    filter: drop-shadow(0 0 0.5rem rgb(69, 255, 199));
   }
 }
 
-section {
-  height: 100vh;
-  color: black;
-  h1 {
-    padding-top: 300px;
-    text-align: center;
-    font-size: 80px;
+
+@media(max-width:768px){
+  %txtsize{
+    font-size: 40px;
   }
-  a {
-    @include txtPos(20%, 20%);
+  .intro {
+    height: 100vh;
+  video{
+    display:none;
+  }
+  .title {
     position: absolute;
+    text-align:center;
     transform: translate(-50%, -50%);
-    font-size: 25px;
-    text-align: center;
-    font-family: "Oswald", sans-serif;
-    padding: 15px 20px 15px 20px;
-    letter-spacing: 2px;
-    filter: drop-shadow(0 0 0.75rem black);
-    color: black;
-    z-index: 1;
+    top:50%;
+    left:50%;
+    @extend %txtsize;
+     }
+     
+
+.bgimg{
+  height: 100vh;
+  width:100vw;
+  background-image: url("/image/title.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+ .bgimg2{
+  height: 100vh;
+  width:100vw;
+  background-image: url("/image/heart.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+ .bgimg3{
+  height: 100vh;
+  width:100vw;
+  background-image: url("/image/hand.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+ .bgimg4{
+  height: 100vh;
+  width:100vw;
+  background-image: url("/image/waist.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+ .bgimg5{
+  height: 100vh;
+  width:100vw;
+  background-image: url("/image/feet.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+ .bgimg6{
+  height: 100vh;
+  width:100vw;
+  background-image: url("/image/contact.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+  .heart ,.heartImage{
+    position: absolute;
+    text-align:center;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    @extend %txtsize;
+     }
+     .hand {
+      position: absolute;
+      text-align:center;
+      transform: translate(-50%, -50%);
+      top:50%;
+    left:50%;
+    @extend %txtsize;
+       }
+       .handImage{
+        background-image: url("/Product v.2/image/hand.jpg");
+        height:800px;
+      }
+
+       .waist {
+        position: absolute;
+        text-align:center;
+        transform: translate(-50%, -50%);
+        top:50%;
+    left:50%;
+    @extend %txtsize;
+         }
+         .feet {
+          position: absolute;
+          text-align:center;
+          transform: translate(-50%, -50%);
+          top:50%;
+    left:50%;
+    @extend %txtsize;
+           }
+     .loot {
+      position: absolute;
+      text-align:center;
+      transform: translate(-50%, -50%);
+      top:50%;
+    left:50%;
+    @extend %txtsize;
+       }
+  .btnf {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(86, 139, 255);
+    padding: 12px 7px;
+    @extend %txtsize;
+    cursor: pointer;
   }
+  .btni {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(219, 219, 219);
+    padding: 12px 7px;
+    @extend %txtsize;
+    cursor: pointer;
+  }
+  .btnt {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(35, 229, 255);
+    padding: 12px 7px;
+    @extend %txtsize;
+    cursor: pointer;
+  }
+  .btny {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(255, 38, 38);
+    padding: 12px 7px;
+    @extend %txtsize;
+    cursor: pointer;
+  }
+}
+}
+@media(max-width:320px){
+
+  %txtsizep{
+    font-size: 20px;
+  }
+  .intro {
+    height: 100vh;
+  video{
+    display:none;
+  }
+  .title {
+    position: absolute;
+    text-align:center;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    @extend %txtsizep;
+     }
+  .heart {
+    position: absolute;
+    text-align:center;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    @extend %txtsizep;
+     }
+     .hand {
+      position: absolute;
+      text-align:center;
+      transform: translate(-50%, -50%);
+      top:50%;
+    left:50%;
+    @extend %txtsizep;
+       }
+       .waist {
+        position: absolute;
+        text-align:center;
+        transform: translate(-50%, -50%);
+        top:50%;
+    left:50%;
+    @extend %txtsizep;
+         }
+         .feet {
+          position: absolute;
+          text-align:center;
+          transform: translate(-50%, -50%);
+          top:50%;
+    left:50%;
+    @extend %txtsizep;
+           }
+     .loot {
+      position: absolute;
+      text-align:center;
+      transform: translate(-50%, -50%);
+      top:50%;
+    left:50%;
+    @extend %txtsizep;
+       }
+  .btnf {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(86, 139, 255);
+    padding: 12px 7px;
+    @extend %txtsizep;
+    cursor: pointer;
+  }
+  .btni {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(219, 219, 219);
+    padding: 12px 7px;
+    @extend %txtsizep;
+    cursor: pointer;
+  }
+  .btnt {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(35, 229, 255);
+    padding: 12px 7px;
+    @extend %txtsizep;
+    cursor: pointer;
+  }
+  .btny {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(255, 38, 38);
+    padding: 12px 7px;
+    @extend %txtsizep;
+    cursor: pointer;
+  }
+}
+}
+@media(max-width:320px){
+
+  %txtsizes{
+    font-size: 15px;
+  }
+  .intro {
+    height: 100vh;
+  video{
+    display:none;
+  }
+  .title {
+    position: absolute;
+    text-align:center;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    @extend %txtsizes;
+     }
+  .heart {
+    position: absolute;
+    text-align:center;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    @extend %txtsizes;
+     }
+     .hand {
+      position: absolute;
+      text-align:center;
+      transform: translate(-50%, -50%);
+      top:50%;
+    left:50%;
+    @extend %txtsizes;
+       }
+       .waist {
+        position: absolute;
+        text-align:center;
+        transform: translate(-50%, -50%);
+        top:50%;
+    left:50%;
+    @extend %txtsizes;
+         }
+         .feet {
+          position: absolute;
+          text-align:center;
+          transform: translate(-50%, -50%);
+          top:50%;
+    left:50%;
+    @extend %txtsizes;
+           }
+     .loot {
+      position: absolute;
+      text-align:center;
+      transform: translate(-50%, -50%);
+      top:50%;
+    left:50%;
+    @extend %txtsizes;
+       }
+  .btnf {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(86, 139, 255);
+    padding: 12px 7px;
+    @extend %txtsizes;
+    cursor: pointer;
+  }
+  .btni {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(219, 219, 219);
+    padding: 12px 7px;
+    @extend %txtsizes;
+    cursor: pointer;
+  }
+  .btnt {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(35, 229, 255);
+    padding: 12px 7px;
+    @extend %txtsizes;
+    cursor: pointer;
+  }
+  .btny {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: rgb(255, 38, 38);
+    padding: 12px 7px;
+    @extend %txtsizes;
+    cursor: pointer;
+  }
+}
 }
