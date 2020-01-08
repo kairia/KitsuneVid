@@ -202,7 +202,7 @@ $test_color: rgba(21, 109, 87, 0.486);
     height: 8vh;
   }
   %txtsize{
-    font-size: 40px;
+    font-size: 5vh;
   }
   .intro {
     height: 100vh;
@@ -347,11 +347,13 @@ $test_color: rgba(21, 109, 87, 0.486);
     cursor: pointer;
   }
 }
+
+
 }
 @media(max-width:320px){
 
   %txtsizep{
-    font-size: 20px;
+    font-size: 5vh;
   }
   .intro {
     height: 100vh;
@@ -443,7 +445,7 @@ $test_color: rgba(21, 109, 87, 0.486);
 @media(max-width:320px){
 
   %txtsizes{
-    font-size: 15px;
+    font-size: 5vh;
   }
   .intro {
     height: 100vh;

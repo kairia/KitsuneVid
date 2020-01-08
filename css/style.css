@@ -228,7 +228,7 @@
     height: 8vh;
   }
   .intro .title, .intro .heart, .intro .heartImage, .intro .hand, .intro .waist, .intro .feet, .intro .loot, .intro .btnf, .intro .btni, .intro .btnt, .intro .btny {
-    font-size: 40px;
+    font-size: 5vh;
   }
   .intro {
     height: 100vh;
@@ -370,7 +370,7 @@
 
 @media (max-width: 320px) {
   .intro .title, .intro .heart, .intro .hand, .intro .waist, .intro .feet, .intro .loot, .intro .btnf, .intro .btni, .intro .btnt, .intro .btny {
-    font-size: 20px;
+    font-size: 5vh;
   }
   .intro {
     height: 100vh;
@@ -458,7 +458,7 @@
 
 @media (max-width: 320px) {
   .intro .title, .intro .heart, .intro .hand, .intro .waist, .intro .feet, .intro .loot, .intro .btnf, .intro .btni, .intro .btnt, .intro .btny {
-    font-size: 15px;
+    font-size: 5vh;
   }
   .intro {
     height: 100vh;
