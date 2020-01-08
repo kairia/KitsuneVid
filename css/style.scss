@@ -42,6 +42,56 @@ $test_color: rgba(21, 109, 87, 0.486);
   text-align: center;
   font-family: "Oswald", sans-serif;
 }
+
+.filter{
+  top: 0;
+  position: fixed;
+  opacity: 0.2;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/image/filter.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  z-index: 600;
+  width: 100%;
+  height: 6vh;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(28, 133, 127);
+  opacity: 0.8;
+  transition: ease 0.5s;
+  .link {
+    display: flex;
+    justify-content: space-around;
+    a {
+      margin-left: 2vw;
+      padding: 0.15vw;
+      font-family: "Play", sans-serif;
+      font-size: 2vh;
+      color: white;
+      border-radius: 5px;
+      border: solid 0.2vh transparent;
+      transition: 1s ease;
+      text-decoration: none;
+      &:hover {
+        border-color: white;
+      }
+    }
+  }
+  img {
+    height: 80%;
+  }
+}
+
+
 //!End
 /*.heart a {
   @extend %textControl;
@@ -56,6 +106,7 @@ $test_color: rgba(21, 109, 87, 0.486);
 .intro {
   height: 100vh;
   video {
+    z-index: -5;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -64,7 +115,7 @@ $test_color: rgba(21, 109, 87, 0.486);
   .title {
     @extend %textControl;
     @include txtPos(51%, 81%);
-    @include titleFormat(75px);
+    @include titleFormat(3vw);
   }
   span {
     opacity: 0;
@@ -161,6 +212,8 @@ $test_color: rgba(21, 109, 87, 0.486);
     transform: translate(-50%, -50%);
     top:50%;
     left:50%;
+    background-color: rgba(20, 20, 20, 0.795);
+    padding: 15px;
     @extend %txtsize;
      }
      

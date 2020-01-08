@@ -3,8 +3,8 @@
   border-radius: 50%;
   border: #ffffff 4px solid;
   background: rgba(35, 49, 64, 0.8);
-  right: 5vw;
-  bottom: 10vh;
+  right: 20vw;
+  top: 1vh;
   position: fixed;
   z-index: 999;
   -webkit-transition: 1s ease;
@@ -62,15 +62,32 @@
 }
 
 ul li {
-  background-color: #ffe175;
+  background-color: #1c857f;
   z-index: 998;
-  border-bottom: 3px solid #1c875f;
+  height: 4vh;
+  padding-left: 1vw;
+  margin-top: 3vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ul li a {
+  color: white;
+}
+
+ul li a:hover {
+  color: #1c857f;
+}
+
+ul li:hover {
+  background-color: #ffe925;
 }
 
 .navbar-control {
-  width: 200px;
+  width: 13vw;
   height: 100%;
-  background-color: #ffe175;
+  background-color: rgba(28, 133, 128, 0.767);
   z-index: 998;
 }
 
@@ -96,7 +113,8 @@ ul li {
   position: fixed;
   min-height: 1080px;
   opacity: 0.5;
-  background: white;
+  background: black;
+  height: 100vh;
 }
 
 .square {
@@ -119,6 +137,10 @@ ul li {
     top: 930px;
     position: fixed;
   }
+  .navbar-control {
+    width: 50vw;
+    height: 100%;
+  }
 }
 
 @media (max-width: 320px) {
@@ -128,9 +150,13 @@ ul li {
     position: fixed;
   }
   .navbar-control {
-    width: 160px;
+    width: 13vw;
     height: 100%;
     background-color: #ffffff;
   }
+}
+
+.nav-open {
+  right: 12vw;
 }
 /*# sourceMappingURL=bootstrap-animation.css.map */

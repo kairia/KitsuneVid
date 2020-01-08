@@ -10,6 +10,15 @@ const armText = intro.querySelector(".hand");
 const waistText = intro.querySelector(".waist");
 const feetLeftText = intro.querySelector(".feet");
 const lootText = intro.querySelector(".loot");
+const navT = document.querySelector(".navbar-toggler");
+
+
+navT.addEventListener("click",()=>{
+navT.classList.toggle("nav-open");
+
+});
+
+
 
 
 
