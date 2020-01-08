@@ -69,8 +69,8 @@
   border-color: white;
 }
 
-.nav img {
-  height: 80%;
+.nav .image {
+  height: 4.8vh;
 }
 
 /*.heart a {
